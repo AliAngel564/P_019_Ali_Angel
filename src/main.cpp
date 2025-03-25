@@ -1,8 +1,8 @@
 /*
 Amerike University
 Author: Ali Angel
-Work #: 17
-Date: 21/03/25
+Work #: 19
+Date: 25/03/25
 Description: This program will use a struct to store different data about different videogames 
 and we will then show said data to the user
 */
