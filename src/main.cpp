@@ -9,6 +9,7 @@ and we will then show said data to the user
 
 #include <iostream>
 #include <conio.h>
+#include <string>
 
 using namespace std;
 
@@ -19,30 +20,53 @@ struct VideoGame
     string title;
     string ageRating;
     float price;
+
+    string setTitle(string newTitle)
+    {
+        title = newTitle;
+    }
+    string setRating(string newRating)
+    {
+        ageRating = newRating;
+    }
+    float setPrice(float newPrice)
+    {
+        price = newPrice;
+    }
+    string getTitle()
+    {
+        return title;
+    }
+    string getRating()
+    {
+        return ageRating;
+    }
+    float getPrice()
+    {
+        return price;
+    }
 };
 
 int main(){
-    VideoGame videogames[3];
-    cout << "This program will prompt you to input information about three videogames\n";
-    pressAnyKey;
-    for(int i=0;i<3;i++)
-    {
-        cout << i+1 << ".Game\nTitle: ";
-        cin >> videogames[i].title;
-        cout << "Age Rating: ";
-        cin >> videogames[i].ageRating;
-        cout << "Price: $ ";
-        cin >> videogames[i].price;
-        cout << "\n";
-    }
-    cout << "We will now show you your videogames\n";
+    string name,rating;
+    float price;
+    VideoGame usrGame;
+    cout << "This program will prompt you to input information about a videogames\n";
     pressAnyKey();
-    for(int i=0;i<3;i++)
-    {
-        cout << i+1 << ".Game\nTitle: " << videogames[i].title<<"\nAge Rating: " << videogames[i].ageRating << "\nPrice: $ " << videogames[i].price << endl;
-    }
-
-
+    cout <<"Title: ";
+    getline(cin,name);
+    usrGame.setTitle(name);
+    cout << "\nAge Rating: ";
+    getline(cin,rating);
+    usrGame.setRating(rating); 
+    cout << "\nPrice: $ ";
+    cin >> price;
+    usrGame.setPrice(price);    
+    cout << "\nWe will now show you the data you input videogame\n";
+    pressAnyKey();
+    cout << "Title: " << usrGame.getTitle();
+    cout << "\nAge Rating: " << usrGame.getRating();
+    cout << "\nPrice: $ " << usrGame.getPrice();
 
     return 0;    
 }
